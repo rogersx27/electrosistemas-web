@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  electrosistemas-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: electrosistemas-react-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
