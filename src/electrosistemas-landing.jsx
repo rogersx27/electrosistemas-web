@@ -124,6 +124,28 @@ function Carousel({ items, accentColor }) {
   );
 }
 
+// ─── TV-Style Announcement ───
+function TVAnnouncement({ speed = 40 }) {
+  const text = "Trabajamos con marcas reconocidas a nivel nacional e internacional, garantizando respaldo, calidad y seguridad en todos nuestros proyectos.";
+
+  return (
+    <section style={styles.tvAnnouncementSection}>
+      <div style={styles.tvAnnouncementBg}>
+        <div style={{
+          ...styles.tvAnnouncementTrack,
+          animation: `tvScroll ${speed}s linear infinite`
+        }}>
+          {/* Duplicar contenido para loop infinito seamless */}
+          <span style={styles.tvAnnouncementText}>{text} •</span>
+          <span style={styles.tvAnnouncementText}>{text} •</span>
+        </div>
+        {/* Fade overlay for smooth edges */}
+        <div style={styles.tvAnnouncementFade} />
+      </div>
+    </section>
+  );
+}
+
 // ─── Infinite Brand Marquee ───
 function BrandMarquee() {
   // Duplicar marcas para efecto infinito
@@ -228,6 +250,9 @@ export default function ElectrosistemasLanding() {
         <div style={styles.heroGradient} />
       </header>
 
+      {/* ── TV Announcement ── */}
+      <TVAnnouncement />
+
       {/* ── Marcas ── */}
       <BrandMarquee />
 
@@ -309,6 +334,11 @@ const globalCSS = `
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes tvScroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
@@ -437,6 +467,43 @@ const styles = {
     right: 0,
     height: 1,
     background: "linear-gradient(90deg, transparent, #0F346015, #1A7A5C15, transparent)"
+  },
+
+  // TV Announcement
+  tvAnnouncementSection: {
+    padding: "16px 0",
+    background: "linear-gradient(135deg, #0F3460 0%, #16406B 50%, #1A7A5C 100%)",
+    overflow: "hidden",
+    position: "relative"
+  },
+  tvAnnouncementBg: {
+    position: "relative",
+    overflow: "hidden",
+    width: "100%"
+  },
+  tvAnnouncementTrack: {
+    display: "flex",
+    width: "max-content"
+  },
+  tvAnnouncementText: {
+    fontFamily: "'Sora', sans-serif",
+    fontSize: 15,
+    fontWeight: 600,
+    color: "#FFFFFF",
+    letterSpacing: "0.03em",
+    whiteSpace: "nowrap",
+    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+    padding: "0 40px"
+  },
+  tvAnnouncementFade: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: "linear-gradient(90deg, rgba(15,52,96,1) 0%, transparent 10%, transparent 90%, rgba(26,122,92,1) 100%)",
+    pointerEvents: "none",
+    zIndex: 1
   },
 
   // Brands
