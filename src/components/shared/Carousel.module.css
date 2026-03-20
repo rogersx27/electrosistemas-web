@@ -1,0 +1,100 @@
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carouselBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 2px solid;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.carouselBtn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carouselBtn:disabled {
+  cursor: not-allowed;
+}
+
+.carouselTrack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+
+.carouselCard {
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  border-top: 3px solid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carouselCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.cardImagePlaceholder {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContent {
+  padding: 16px 18px 20px;
+}
+
+.cardCategory {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1D23;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+@media (max-width: 968px) {
+  .carouselTrack {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carouselWrapper {
+    gap: 12px;
+  }
+
+  .carouselBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carouselTrack {
+    grid-template-columns: 1fr;
+  }
+}

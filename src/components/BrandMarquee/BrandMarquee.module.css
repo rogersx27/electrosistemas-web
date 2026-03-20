@@ -1,0 +1,60 @@
+.brandsSection {
+  padding: 28px 0;
+  border-top: 1px solid #E8ECF1;
+  border-bottom: 1px solid #E8ECF1;
+  background: #FAFBFC;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marqueeContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 56px;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brandLogo {
+  opacity: 0.6;
+}
+
+.brandName {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0F3460;
+  opacity: 0.45;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeTrack {
+    gap: 40px;
+  }
+
+  .brandName {
+    font-size: 12px;
+  }
+}

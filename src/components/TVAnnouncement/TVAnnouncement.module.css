@@ -1,0 +1,56 @@
+.tvAnnouncementSection {
+  padding: 16px 0;
+  background: linear-gradient(135deg, #0F3460 0%, #16406B 50%, #1A7A5C 100%);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.tvAnnouncementBg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tvAnnouncementTrack {
+  display: flex;
+  width: max-content;
+}
+
+.tvAnnouncementText {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 0 40px;
+}
+
+.tvAnnouncementFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(15,52,96,1) 0%, transparent 10%, transparent 90%, rgba(26,122,92,1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes tvScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .tvAnnouncementText {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+}

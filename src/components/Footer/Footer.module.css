@@ -1,0 +1,99 @@
+.footer {
+  background: #0C1222;
+  padding: 56px 48px 0;
+  color: #C4CCD8;
+  width: 100%;
+}
+
+.footerInner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #1E2A3F;
+}
+
+.footerBrand {
+  max-width: 300px;
+}
+
+.footerLogo {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.footerLogoAccent {
+  color: #1A7A5C;
+}
+
+.footerDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7B8AA0;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 56px;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerColTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+.footerLink {
+  font-size: 14px;
+  color: #7B8AA0;
+  transition: color 0.2s ease;
+  display: block;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #C4CCD8;
+}
+
+.footerBottom {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #4A5568;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .footer {
+    padding: 48px 24px 0;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footerLinks {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .footerBrand {
+    max-width: 100%;
+  }
+}

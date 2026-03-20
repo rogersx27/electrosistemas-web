@@ -1,0 +1,50 @@
+.section {
+  padding: 72px 48px;
+  max-width: 1220px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1A7A5C;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0F3460;
+}
+
+.sectionSubtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #4A5568;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 24px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionSubtitle {
+    font-size: 14px;
+  }
+}

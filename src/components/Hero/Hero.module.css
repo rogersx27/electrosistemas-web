@@ -1,0 +1,167 @@
+.hero {
+  position: relative;
+  padding: 80px 48px 64px;
+  background: linear-gradient(165deg, #FFFFFF 0%, #EEF1F6 50%, #E4EBF5 100%);
+  overflow: hidden;
+  width: 100%;
+}
+
+.heroInner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 560px;
+}
+
+.heroLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1A7A5C;
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0F3460;
+  margin-bottom: 20px;
+}
+
+.heroTitleAccent {
+  color: #1A7A5C;
+}
+
+.heroTagline {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4A5568;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.heroCTAs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  background: #0F3460;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background: #16406B;
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  background: transparent;
+  color: #0F3460;
+  border: 2px solid #0F346025;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnSecondary:hover {
+  border-color: #0F3460;
+  background: #0F346008;
+}
+
+.heroVisual {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoPlaceholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  background: white;
+  border: 2px dashed #0F346020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logoText {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0F346060;
+  letter-spacing: 0.15em;
+}
+
+.heroGradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0F346015, #1A7A5C15, transparent);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 24px 48px;
+  }
+
+  .heroInner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .logoPlaceholder {
+    width: 180px;
+    height: 180px;
+  }
+}
