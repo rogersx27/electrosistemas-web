@@ -1,0 +1,106 @@
+:root {
+  /* Colors - Primary */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #3b82f6;
+
+  /* Colors - Industrial */
+  --color-industrial-dark: #1e293b;
+  --color-industrial-medium: #334155;
+  --color-industrial-light: #475569;
+
+  /* Colors - Accents */
+  --color-accent-amber: #f59e0b;
+  --color-accent-green: #10b981;
+
+  /* Colors - Text */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
+
+  /* Colors - Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fc;
+  --color-bg-tertiary: #f1f5f9;
+
+  /* Colors - Borders */
+  --color-border-light: #e5e7eb;
+  --color-border-medium: #cbd5e1;
+
+  /* Colors - Status */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Typography */
+  --font-primary: 'DM Sans', sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --font-mono: monospace;
+
+  /* Font Sizes */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 15px;
+  --text-xl: 17px;
+  --text-2xl: 20px;
+  --text-3xl: 24px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* Container */
+  --container-max-width: 1120px;
+  --container-padding: 48px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 24px;
+    --text-5xl: 40px;
+    --text-4xl: 28px;
+  }
+}
