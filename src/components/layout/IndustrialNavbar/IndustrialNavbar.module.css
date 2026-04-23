@@ -1,0 +1,134 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%);
+  border-bottom: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-12);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.accentLine {
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, var(--color-accent-amber), var(--color-accent-green));
+  border-radius: 2px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: var(--font-bold);
+  color: var(--color-industrial-dark);
+}
+
+.logoAccent {
+  color: var(--color-primary);
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.navLink {
+  position: relative;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  padding-bottom: var(--space-1);
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navLink.active {
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+}
+
+.activeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.progressBar {
+  height: 3px;
+  background: var(--color-border-light);
+  position: relative;
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-amber));
+  transition: width var(--transition-base);
+}
+
+.breadcrumb {
+  background: var(--color-bg-secondary);
+  padding: var(--space-2) var(--space-12);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.statusDot {
+  color: var(--color-accent-green);
+  font-size: 8px;
+}
+
+.breadcrumbLabel {
+  color: var(--color-text-muted);
+}
+
+.breadcrumbSection {
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+}
+
+.breadcrumbProgress {
+  color: var(--color-text-light);
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .navbarContent {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .breadcrumb {
+    padding: var(--space-2) var(--space-6);
+  }
+}
