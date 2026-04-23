@@ -29,7 +29,7 @@ export default function Hero({ onQuoteClick }) {
   const currentProject = FEATURED_PROJECTS[currentSlide];
 
   return (
-    <header className={styles.hero}>
+    <header className={styles.hero} id="inicio">
       <div className={styles.heroInner}>
         {/* Left Column - Content */}
         <div className={styles.heroContent}>
