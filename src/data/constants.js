@@ -64,3 +64,88 @@ export const COLORS = {
     tertiary: "#FAFBFC"
   }
 };
+
+// ─── Client Logos ───
+export const CLIENTS = [
+  {
+    id: 'client-001',
+    name: 'Industrias XYZ',
+    logo: null,
+    sector: 'Manufactura'
+  },
+  {
+    id: 'client-002',
+    name: 'Energía ABC',
+    logo: null,
+    sector: 'Energía'
+  },
+  {
+    id: 'client-003',
+    name: 'AgroTech Solutions',
+    logo: null,
+    sector: 'Agricultura'
+  },
+  {
+    id: 'client-004',
+    name: 'Manufactura DEF',
+    logo: null,
+    sector: 'Manufactura'
+  },
+  {
+    id: 'client-005',
+    name: 'Logística GHI',
+    logo: null,
+    sector: 'Logística'
+  },
+  {
+    id: 'client-006',
+    name: 'Alimentos JKL',
+    logo: null,
+    sector: 'Alimentos'
+  }
+];
+
+// ─── Testimonials ───
+export const TESTIMONIALS = [
+  {
+    id: 'test-001',
+    client: 'Juan Pérez',
+    company: 'Industrias XYZ',
+    position: 'Gerente de Planta',
+    text: 'Excelente trabajo en la automatización de nuestra línea de producción. El equipo de Electrosistemas demostró gran profesionalismo y conocimiento técnico.',
+    rating: 5
+  },
+  {
+    id: 'test-002',
+    client: 'María González',
+    company: 'Energía ABC',
+    position: 'Directora de Operaciones',
+    text: 'El sistema SCADA que implementaron superó nuestras expectativas. Ahora tenemos visibilidad completa de nuestra operación.',
+    rating: 5
+  }
+];
+
+// ─── Contact Information ───
+export const CONTACT_INFO = {
+  email: 'info@electrosistemas.com',
+  phone: '+1 234 567 8900',
+  address: 'Calle Principal 123, Ciudad, País, CP 12345',
+  hours: 'Lunes a Viernes: 8:00 AM - 6:00 PM',
+  social: {
+    linkedin: 'https://linkedin.com/company/electrosistemas',
+    facebook: 'https://facebook.com/electrosistemas',
+    instagram: 'https://instagram.com/electrosistemas'
+  }
+};
+
+// ─── Service Statistics ───
+export const SERVICE_STATS = {
+  electronica: [
+    { value: '24', label: 'PLCs Implementados' },
+    { value: '98%', label: 'Uptime Promedio' }
+  ],
+  software: [
+    { value: '18', label: 'Apps Desarrolladas' },
+    { value: '15', label: 'Integraciones API' }
+  ]
+};
