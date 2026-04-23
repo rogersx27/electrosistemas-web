@@ -1,33 +1,159 @@
+import { useState, useEffect } from 'react';
+import { FEATURED_PROJECTS } from '../../data/projects';
+import Button from '../shared/Button/Button';
 import styles from './Hero.module.css';
 
-export default function Hero() {
+export default function Hero({ onQuoteClick }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-rotate carousel every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % FEATURED_PROJECTS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % FEATURED_PROJECTS.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + FEATURED_PROJECTS.length) % FEATURED_PROJECTS.length);
+  };
+
+  const currentProject = FEATURED_PROJECTS[currentSlide];
+
   return (
     <header className={styles.hero}>
       <div className={styles.heroInner}>
+        {/* Left Column - Content */}
         <div className={styles.heroContent}>
-          <p className={styles.heroLabel}>Ingeniería & Tecnología</p>
+          {/* Animated Badge */}
+          <div className={styles.badge}>
+            <span className={styles.statusDot}></span>
+            INGENIERÍA & TECNOLOGÍA
+          </div>
+
+          {/* Title */}
           <h1 className={styles.heroTitle}>
             ELECTRO<span className={styles.heroTitleAccent}>SISTEMAS</span>
           </h1>
+
+          {/* Accent Line */}
+          <div className={styles.accentLine}></div>
+
+          {/* Tagline */}
           <p className={styles.heroTagline}>
-            Soluciones integrales en electrónica industrial y desarrollo de software para la automatización inteligente de su operación.
+            Soluciones integrales en <strong>electrónica industrial</strong> y <strong>desarrollo de software</strong> para la automatización inteligente de su operación.
           </p>
+
+          {/* Metrics Grid */}
+          <div className={styles.metricsGrid}>
+            <div className={styles.metricCard}>
+              <div className={`${styles.metricNumber} ${styles.metricBlue}`}>150+</div>
+              <div className={styles.metricLabel}>PROYECTOS</div>
+            </div>
+            <div className={styles.metricCard}>
+              <div className={`${styles.metricNumber} ${styles.metricGreen}`}>50+</div>
+              <div className={styles.metricLabel}>CLIENTES</div>
+            </div>
+            <div className={styles.metricCard}>
+              <div className={`${styles.metricNumber} ${styles.metricAmber}`}>10+</div>
+              <div className={styles.metricLabel}>AÑOS</div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
           <div className={styles.heroCTAs}>
-            <button className={styles.btnPrimary}>Conozca nuestros servicios</button>
-            <button className={styles.btnSecondary}>Contáctenos</button>
+            <Button variant="primary" onClick={onQuoteClick}>
+              Solicitar Cotización
+            </Button>
+            <Button variant="outline" onClick={() => {
+              const element = document.getElementById('servicios');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Ver Servicios
+            </Button>
           </div>
         </div>
-        <div className={styles.heroVisual}>
-          <div className={styles.logoPlaceholder}>
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <rect x="4" y="4" width="72" height="72" rx="16" stroke="#0F3460" strokeWidth="2" />
-              <path d="M24 40H56M40 24V56" stroke="#0F3460" strokeWidth="2.5" strokeLinecap="round" />
-              <circle cx="40" cy="40" r="12" stroke="#1A7A5C" strokeWidth="2" strokeDasharray="4 3" />
-            </svg>
-            <span className={styles.logoText}>LOGO</span>
+
+        {/* Right Column - Project Carousel */}
+        <div
+          className={styles.carouselContainer}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Carousel Header */}
+          <div className={styles.carouselHeader}>
+            <div>
+              <div className={styles.carouselLabel}>NUESTROS PROYECTOS</div>
+              <div className={styles.carouselTitle}>Trabajos Destacados</div>
+            </div>
+            <div className={styles.carouselNav}>
+              <button
+                className={styles.navButton}
+                onClick={prevSlide}
+                aria-label="Proyecto anterior"
+              >
+                ←
+              </button>
+              <button
+                className={styles.navButton}
+                onClick={nextSlide}
+                aria-label="Siguiente proyecto"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          {/* Carousel Slide */}
+          <div className={styles.carouselSlide}>
+            {/* Project Image */}
+            <div className={styles.projectImage}>
+              {/* Category Badge */}
+              <div className={styles.categoryBadge}>
+                {currentProject.category === 'electronica' ? 'ELECTRÓNICA' : 'SOFTWARE'}
+              </div>
+
+              {/* Slide Indicators */}
+              <div className={styles.slideIndicators}>
+                {FEATURED_PROJECTS.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Project Info */}
+            <div className={styles.projectInfo}>
+              <div>
+                <div className={styles.projectClient}>{currentProject.client}</div>
+                <div className={styles.projectSector}>{currentProject.sector}</div>
+              </div>
+              <div className={styles.projectResult}>
+                <div className={styles.resultLabel}>Resultado</div>
+                <div className={styles.resultMetric}>{currentProject.result.metric} {currentProject.result.label}</div>
+              </div>
+            </div>
+
+            {/* Project Tags */}
+            <div className={styles.projectTags}>
+              {currentProject.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>{tag}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
       <div className={styles.heroGradient} />
     </header>
   );
