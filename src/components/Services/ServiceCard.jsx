@@ -1,6 +1,6 @@
 import styles from './ServiceCard.module.css';
 
-export default function ServiceCard({ service, index }) {
+export default function ServiceCard({ service, index, stats }) {
   const isElectronica = index === 0;
   const accent = isElectronica ? "#0F3460" : "#1A7A5C";
 
@@ -31,6 +31,18 @@ export default function ServiceCard({ service, index }) {
           </li>
         ))}
       </ul>
+
+      {/* Service Stats */}
+      {stats && stats.length > 0 && (
+        <div className={styles.statsContainer}>
+          {stats.map((stat, i) => (
+            <div key={i} className={styles.statItem}>
+              <div className={styles.statValue} style={{ color: accent }}>{stat.value}</div>
+              <div className={styles.statLabel}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
